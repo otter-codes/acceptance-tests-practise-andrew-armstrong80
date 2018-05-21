@@ -59,7 +59,7 @@ class StepDefinitions extends ScalaDsl with EN with Matchers with Browser {
     click on id("submit")
   }
 
-  When("""^I enter the address$""") { (table: DataTable) =>
+  When("""^I enter the address$""") { table: DataTable =>
     table.asMaps[String, String](classOf[String], classOf[String]).asScala.foreach(row => {
 
       webDriver.findElement(By.name(row.get("Field"))).sendKeys(row.get("Value"))
