@@ -1,6 +1,6 @@
 name := "cucumber_selenium_starter"
 
-version := "0.1"
+version := "0.13.15"
 
 scalaVersion := "2.12.4"
 
