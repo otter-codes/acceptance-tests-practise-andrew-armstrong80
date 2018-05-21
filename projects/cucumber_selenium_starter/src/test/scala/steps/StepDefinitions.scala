@@ -34,6 +34,11 @@ class StepDefinitions extends ScalaDsl with EN with Matchers with Browser {
     click on id("submit")
   }
 
+  When("""^I choose the "Social care workers" option$""") { () =>
+    click on id("capacityRegistering.socialCareWorkers")
+    click on id("submit")
+  }
+
 
   And("""^I enter "(.+)" in the name field$""") { name: String =>
     webDriver.findElement(By.id("value")).sendKeys(name)
@@ -79,6 +84,11 @@ class StepDefinitions extends ScalaDsl with EN with Matchers with Browser {
 
   And("""^I submit the form$""") { () =>
     click on id("submit")
+  }
+
+  Then("""^I should be taken to the redirection page$""") { () =>
+    go to "http://localhost:8550/apply-for-social-care-compliance-scheme/social-care-workers"
+    find(cssSelector("h1")).get.text shouldBe "You will have to start again"
   }
 
 

@@ -4,7 +4,7 @@ Feature: An agent for a company that employs social care worker can register
   be able to provide their details and register for
   the scheme
 
-  Scenario: An agent company that employs social care worker with a UK address can register for the scheme
+  Scenario: An agent for a company that employs social care worker with a UK address can register for the scheme
     Given I am on the social care compliance homepage
     When I choose the "An agent or representative of a company that employs social care workers" option
     And I enter "name" in the name field
